@@ -1,0 +1,45 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zh.administrativedivision.mapper.AreaMapper">
+
+    <select id="listAreas" resultType="com.zh.administrativedivision.module.Area">
+        SELECT
+            area_id,
+            area_name,
+            area_code,
+            area_level
+        FROM
+            area
+    </select>
+
+    <insert id="insertArea" parameterType="com.zh.administrativedivision.module.Area">
+        INSERT INTO area (
+            area_id,
+            area_name,
+            area_code,
+            area_level
+        )
+        VALUES (
+            #{areaId, jdbcType=VARCHAR},
+            #{areaName, jdbcType=VARCHAR},
+            #{areaCode, jdbcType=VARCHAR},
+            #{area.areaLevel, jdbcType=NUMERIC}
+        )
+    </insert>
+
+    <insert id="insertAreas" parameterType="java.util.List">
+        INSERT ALL
+        <foreach collection="areaList" item="area">
+            INTO  area VALUES (
+                #{area.areaId, jdbcType=VARCHAR},
+                #{area.areaName, jdbcType=VARCHAR},
+                #{area.areaCode, jdbcType=VARCHAR},
+                #{area.areaLevel, jdbcType=NUMERIC}
+            )
+        </foreach>
+        SELECT 1 FROM DUAL
+    </insert>
+
+</mapper>

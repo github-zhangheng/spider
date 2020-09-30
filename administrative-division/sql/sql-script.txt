@@ -1,0 +1,41 @@
+ORACLE DATABASE
+
+--------------------------------------------------------
+--  Create user and authorize
+--------------------------------------------------------
+  CREATE USER zh_project IDENTIFIED BY zh_project;
+  GRANT DBA zh_project;
+
+--------------------------------------------------------
+--  DDL for Table AREA
+--------------------------------------------------------
+  CREATE TABLE "ZH_PROJECT"."AREA"
+   (	"AREA_ID" VARCHAR2(32 BYTE),
+	"AREA_NAME" VARCHAR2(100 BYTE),
+	"AREA_CODE" VARCHAR2(12 BYTE),
+	"AREA_LEVEL" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+
+
+   COMMENT ON COLUMN "ZH_PROJECT"."AREA"."AREA_ID" IS 'ID主键';
+
+   COMMENT ON COLUMN "ZH_PROJECT"."AREA"."AREA_NAME" IS '区划名称';
+
+   COMMENT ON COLUMN "ZH_PROJECT"."AREA"."AREA_CODE" IS '区划代码';
+
+   COMMENT ON COLUMN "ZH_PROJECT"."AREA"."AREA_LEVEL" IS '区划等级（1：省，2：市，3：县，4：镇，5：村）';
+--------------------------------------------------------
+--  Constraints for Table AREA
+--------------------------------------------------------
+
+  ALTER TABLE "ZH_PROJECT"."AREA" MODIFY ("AREA_ID" NOT NULL ENABLE);
+
+  ALTER TABLE "ZH_PROJECT"."AREA" MODIFY ("AREA_NAME" NOT NULL ENABLE);
+
+  ALTER TABLE "ZH_PROJECT"."AREA" MODIFY ("AREA_CODE" NOT NULL ENABLE);
+
+  ALTER TABLE "ZH_PROJECT"."AREA" MODIFY ("AREA_LEVEL" NOT NULL ENABLE);
