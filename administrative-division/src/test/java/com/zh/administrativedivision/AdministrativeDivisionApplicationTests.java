@@ -60,28 +60,28 @@ class AdministrativeDivisionApplicationTests {
     @Test
     void saveProvinceAreas() {
         // 测试页面地址
-//         String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21.html";
-//         String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/2101.html";
-//         String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/01/210102.html";
-//         String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/01/02/210102001.html";
+        // String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21.html";
+        // String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/2101.html";
+        // String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/01/210102.html";
+        // String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/01/02/210102001.html";
 
         // 存在部分汉字乱码的页面地址（只列出一部分测试）
         // 该页面有个字“冮“（音：gāng），乱码
-//         String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/07/82/210782101.html";
+        // String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/07/82/210782101.html";
         // 该页面有个字“牤“（音：māng），乱码
-         String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/07/81/210781112.html";
+        String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/21/07/81/210781112.html";
 
 
         // 2020年9月29日国家统计局行政区划代码2019年版首页地址
-//        String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/index.html";
+        // String indexUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/index.html";
 
         // 要爬取的省行政区划代码前两位
-        String  provinceAreaCode= "21";
+        String provinceAreaCode = "21";
         Spider.create(new AreaProcessor(indexUrl, provinceAreaCode))
                 .addUrl(indexUrl)
                 .setScheduler(new QueueScheduler())
                 // 保存到数据库
-//                .addPipeline(areaPipeline)
+                // .addPipeline(areaPipeline)
                 .thread(1)
                 .run();
     }

@@ -16,6 +16,9 @@
 
     <properties>
         <java.version>1.8</java.version>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+            <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
     </properties>
 
     <dependencies>
@@ -38,15 +41,15 @@
         </dependency>
         <!-- oracle end -->
 
-        <!-- hutool工具类 start -->
+        <!-- hutool start -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.4.3</version>
         </dependency>
-        <!-- hutool工具类 end -->
+        <!-- hutool end -->
 
-        <!-- webmaigc爬虫 start -->
+        <!-- webmaigc start -->
         <dependency>
             <groupId>us.codecraft</groupId>
             <artifactId>webmagic-core</artifactId>
@@ -57,7 +60,7 @@
             <artifactId>webmagic-extension</artifactId>
             <version>0.7.3</version>
         </dependency>
-        <!-- webmaigc爬虫 end -->
+        <!-- webmaigc end -->
 
         <dependency>
             <groupId>org.projectlombok</groupId>

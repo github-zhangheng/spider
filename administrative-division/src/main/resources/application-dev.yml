@@ -2,7 +2,6 @@ server:
   port: 8080
 
 spring:
-
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@localhost:1521:orcl
@@ -13,9 +12,8 @@ mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.zh.administrativedivision.module
   configuration:
-    map-underscore-to-camel-case: true # 使用驼峰命名法转换字段。
+    map-underscore-to-camel-case: true
 
-#showSql
 logging:
   level:
     com:
