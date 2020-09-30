@@ -11,5 +11,5 @@ public class Area {
     private String areaId;
     private String areaName;
     private String areaCode;
-    private int areaLevel;
+    private Integer areaLevel;
 }
