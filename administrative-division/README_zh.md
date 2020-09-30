@@ -8,5 +8,5 @@
 ### 1.在pom中加入相关依赖
 ### 2.配置yml
 ### 3.编写各层代码
-### 4.运行测试方法 insertLiaoNingAreaList()
+### 4.运行测试方法 saveProvinceAreas()
 ### 5.webmagic研究不深，目前只是简单使用，功能比较简单，页面爬取功能也比较死
