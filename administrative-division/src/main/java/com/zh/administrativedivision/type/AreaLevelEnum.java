@@ -13,9 +13,9 @@ public enum AreaLevelEnum {
     VILLAGE("village", 5);
 
     private String name;
-    private int code;
+    private Integer code;
 
-    private AreaLevelEnum(String name, int code) {
+    private AreaLevelEnum(String name, Integer code) {
         this.name = name;
         this.code = code;
     }
@@ -28,11 +28,11 @@ public enum AreaLevelEnum {
         this.name = name;
     }
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
