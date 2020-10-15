@@ -15,7 +15,7 @@ public enum AreaLevelEnum {
     private String name;
     private Integer code;
 
-    private AreaLevelEnum(String name, Integer code) {
+    AreaLevelEnum(String name, Integer code) {
         this.name = name;
         this.code = code;
     }
