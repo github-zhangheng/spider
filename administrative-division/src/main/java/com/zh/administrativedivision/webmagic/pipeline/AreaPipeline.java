@@ -8,6 +8,7 @@ import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.Pipeline;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
  **/
 @Component
 public class AreaPipeline implements Pipeline {
-    @Autowired
+    @Resource
     private AreaMapper areaMapper;
 
     @Override
