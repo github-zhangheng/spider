@@ -63,7 +63,7 @@ class AdministrativeDivisionApplicationTests {
 
     @Test
     void saveProvinceAreas() {
-        // 数据均为2019年数据，测试三种情况
+        // 数据为2019年数据，测试三种情况
         // 1：爬取页为首页，则爬取全国各个地区
         // 2：爬取页为直辖市，则爬取该直辖市
         // 3：爬取页为省，则爬取该省
@@ -83,14 +83,14 @@ class AdministrativeDivisionApplicationTests {
         // String startUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/13/01/02/130102001.html";
 
         // 需要爬取的区划编码
-        String startUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2019/51/5107.html";
+        String startUrl = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/13.html";
 
         Spider.create(new AreaProcessor("GB18030", startUrl))
                 .addUrl(startUrl)
                 .setScheduler(new QueueScheduler())
                 // 保存到数据库
                 .addPipeline(areaPipeline)
-                .thread(5)
+                .thread(1)
                 .run();
     }
 }
