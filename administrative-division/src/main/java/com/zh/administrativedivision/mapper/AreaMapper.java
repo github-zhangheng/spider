@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
- * @author zhengheng
+ * @author zhangheng
  */
 @Mapper
 public interface AreaMapper {
